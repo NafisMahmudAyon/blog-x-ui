@@ -1,4 +1,8 @@
-import Image from "next/image";
+// import Image from "next/image";
+
+
+
+import { Title } from "@/lib/cjs";
 
 export default function Home() {
   return (
@@ -16,27 +20,112 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+            
           </a>
         </div>
       </div>
+      <article className="relative flex flex-col dark:bg-gray-50">
+        <a href="#def" aria-label="Te nulla oportere reprimique his dolorum" className="absolute inset-0 z-10"></a>
+        <a href="#def" aria-label="Te nulla oportere reprimique his dolorum">
+          <img alt="" className="object-cover w-full h-52 dark:bg-gray-500" src="https://source.unsplash.com/200x200/?fashion?1" />
+        </a>
+        <div className="flex flex-col flex-1 p-6">
 
+          <a href="#abc" aria-label="Te nulla oportere reprimique his dolorum" className="relative z-20"></a>
+          <a href="#xyz" className="text-xs tracking-wider uppercase hover:underline dark:text-violet-600 relative z-20">Convenire</a>
+          <h3 className="flex-1 py-2 text-lg font-semibold leading-snug relative z-20">Te nulla oportere reprimique his dolorum</h3>
+          <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-600 relative z-20">
+            <span>June 1, 2020</span>
+            <span>2.1K views</span>
+          </div>
+        </div>
+      </article>
+
+      <article className="flex flex-col dark:bg-gray-50 p-6 border border-gray-200 rounded-lg">
+        {/* Feature Image */}
+        <div className="feature-image">
+          <img
+            alt="Feature"
+            className="object-cover w-full h-52 dark:bg-gray-500"
+            src="https://source.unsplash.com/600x400/?blog"
+          />
+        </div>
+
+        {/* Title */}
+        <Title tagName="h3" link="#" rel="noopener noreferrer"  className="title text-3xl font-bold mt-4">
+          Blog Post Title
+        </Title>
+
+        {/* Author and Publication Date */}
+        <div className="author-date flex items-center justify-between text-sm mt-2 text-gray-600">
+          <span className="author">by John Doe</span>
+          <span className="publication-date">July 25, 2024</span>
+        </div>
+
+        {/* Read Time and Views */}
+        <div className="meta-info flex items-center justify-between text-xs mt-1 text-gray-600">
+          <span className="read-time">5 min read</span>
+          <span className="views">1.5K views</span>
+        </div>
+
+        {/* Excerpt */}
+        <p className="excerpt mt-4 text-gray-800">
+          This is a short summary or snippet of the blog post content. It gives readers an idea of what the post is about.
+        </p>
+
+        {/* Content */}
+        <div className="content mt-4 text-gray-900">
+          <p>Here's the main body of the blog post. This is where the full content goes...</p>
+          {/* More paragraphs and content */}
+        </div>
+
+        {/* Tags */}
+        <div className="tags mt-4 flex flex-wrap text-xs text-gray-600">
+          <span className="tag bg-gray-200 px-2 py-1 rounded mr-2">Tag1</span>
+          <span className="tag bg-gray-200 px-2 py-1 rounded mr-2">Tag2</span>
+          <span className="tag bg-gray-200 px-2 py-1 rounded">Tag3</span>
+        </div>
+
+        {/* Share Buttons */}
+        <div className="share-buttons mt-4 flex space-x-2">
+          <button className="share bg-blue-600 text-white px-3 py-1 rounded">Share on Facebook</button>
+          <button className="share bg-blue-400 text-white px-3 py-1 rounded">Share on Twitter</button>
+          {/* More share buttons */}
+        </div>
+
+        {/* Call to Action */}
+        <div className="cta mt-6 bg-blue-100 p-4 rounded">
+          <p className="text-lg">Enjoyed this post? Subscribe for more content like this!</p>
+          <button className="subscribe mt-2 bg-blue-600 text-white px-4 py-2 rounded">Subscribe</button>
+        </div>
+
+        {/* Related Posts */}
+        <div className="related-posts mt-6">
+          <h2 className="text-xl font-semibold">Related Posts</h2>
+          <ul className="list-none mt-2 space-y-2">
+            <li><a href="#related1" className="text-blue-600 hover:underline">Related Post 1</a></li>
+            <li><a href="#related2" className="text-blue-600 hover:underline">Related Post 2</a></li>
+            <li><a href="#related3" className="text-blue-600 hover:underline">Related Post 3</a></li>
+          </ul>
+        </div>
+
+        {/* Comments */}
+        <div className="comments mt-6">
+          <h2 className="text-xl font-semibold">Comments</h2>
+          {/* Comments content goes here */}
+        </div>
+
+        {/* Author Bio */}
+        <div className="author-bio mt-6 bg-gray-100 p-4 rounded flex items-center">
+          <img src="https://source.unsplash.com/50x50/?author" alt="Author" className="w-12 h-12 rounded-full mr-4" />
+          <div>
+            <h3 className="text-lg font-semibold">John Doe</h3>
+            <p className="text-sm text-gray-600">John is a writer and blogger who shares insights on web development and design.</p>
+          </div>
+        </div>
+      </article>
       <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+        
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">

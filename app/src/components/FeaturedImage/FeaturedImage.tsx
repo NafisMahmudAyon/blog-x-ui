@@ -1,11 +1,11 @@
-interface FeaturedImageProps extends React.HTMLAttributes<HTMLImageElement> {
+interface FeaturedImageProps extends React.AllHTMLAttributes<HTMLImageElement> {
   className?: string;
-
+  src?: string;
 }
 
-export const FeaturedImage: React.FC<FeaturedImageProps> = ({ className = '', ...rest }) => {
+export const FeaturedImage: React.FC<FeaturedImageProps> = ({ className = '', src, ...rest }) => {
   return (
-    <img src="" alt="" className={`${className}`} {...rest} />
+    <img src={src} className={`${className}`} {...rest} />
   );
 };
 

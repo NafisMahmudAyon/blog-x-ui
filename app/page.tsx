@@ -2,9 +2,11 @@
 
 
 
-import { Title } from "@/lib/cjs";
+import { Excerpt, FeaturedImage, Title } from "./src";
+// import { Excerpt, FeaturedImage, Title } from "@/lib/cjs";
 
 export default function Home() {
+  const aaa = "Lorem dsfsdfdsff sdf sf sdfdsfsdff xxxx x x xxxx x xx x   x x x xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx"
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -20,7 +22,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By{" "}
-            
+
           </a>
         </div>
       </div>
@@ -44,7 +46,7 @@ export default function Home() {
       <article className="flex flex-col dark:bg-gray-50 p-6 border border-gray-200 rounded-lg">
         {/* Feature Image */}
         <div className="feature-image">
-          <img
+          <FeaturedImage
             alt="Feature"
             className="object-cover w-full h-52 dark:bg-gray-500"
             src="https://source.unsplash.com/600x400/?blog"
@@ -52,7 +54,7 @@ export default function Home() {
         </div>
 
         {/* Title */}
-        <Title tagName="h3" link="#" rel="noopener noreferrer"  className="title text-3xl font-bold mt-4">
+        <Title tagName="h3" rel="noopener noreferrer" className="title text-3xl font-bold mt-4">
           Blog Post Title
         </Title>
 
@@ -72,6 +74,15 @@ export default function Home() {
         <p className="excerpt mt-4 text-gray-800">
           This is a short summary or snippet of the blog post content. It gives readers an idea of what the post is about.
         </p>
+
+        <Excerpt limitBy="word" limit={10} >
+          {aaa}
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nihil qui facilis iusto, minus dolorem quasi harum fuga magni odit praesentium inventore ab ipsum voluptatibus commodi fugit molestiae vitae consequuntur.
+
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nihil qui facilis iusto, minus dolorem quasi harum fuga magni odit praesentium inventore ab ipsum voluptatibus commodi fugit molestiae vitae consequuntur.
+
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos nihil qui facilis iusto, minus dolorem quasi harum fuga magni odit praesentium inventore ab ipsum voluptatibus commodi fugit molestiae vitae consequuntur.
+        </Excerpt>
 
         {/* Content */}
         <div className="content mt-4 text-gray-900">
@@ -125,7 +136,7 @@ export default function Home() {
         </div>
       </article>
       <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        
+
       </div>
 
       <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">

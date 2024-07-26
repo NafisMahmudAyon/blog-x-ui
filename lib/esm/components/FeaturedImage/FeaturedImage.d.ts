@@ -1,1 +1,5 @@
-export declare const FeaturedImage: () => import("react/jsx-runtime").JSX.Element;
+interface FeaturedImageProps extends React.HTMLAttributes<HTMLImageElement> {
+    className?: string;
+}
+export declare const FeaturedImage: React.FC<FeaturedImageProps>;
+export {};

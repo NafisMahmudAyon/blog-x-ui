@@ -6,7 +6,7 @@ interface ExcerptProps extends React.AllHTMLAttributes<HTMLElement> {
   limitBy: "word" | "character";
 }
 
-export const Excerpt: React.FC<ExcerptProps> = ({ tagName = "p", className = "", limitBy = "word", limit, children = "" }) => {
+export const Excerpt: React.FC<ExcerptProps> = ({ tagName = "p", className = "", limitBy = "word", limit, children = "", ...rest }) => {
   const Tag: ExcerptProps["tagName"] = tagName;
   var getLimitedWordContent = (data: any) => {
     var content = ""
@@ -32,7 +32,7 @@ export const Excerpt: React.FC<ExcerptProps> = ({ tagName = "p", className = "",
   }
 
   return (
-    <Tag className={`${className}`}>
+    <Tag className={`${className}`} {...rest}>
       {children != "undefined" && typeof children === "string" && 
         <>
           {limitBy == "word" &&<>{children.split(" ").splice(0, limit).join(" ")}</>}

@@ -2,7 +2,7 @@
 
 
 
-import { Excerpt, FeaturedImage, Title } from "./src";
+import { Content, Excerpt, FeaturedImage, Title } from "./src";
 // import { Excerpt, FeaturedImage, Title } from "@/lib/cjs";
 
 export default function Home() {
@@ -86,9 +86,14 @@ export default function Home() {
 
         {/* Content */}
         <div className="content mt-4 text-gray-900">
-          <p>Here's the main body of the blog post. This is where the full content goes...</p>
+          <Content>Here's the main body of the blog post. This is where the full content goes.
+            
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo at repellat, eligendi excepturi tempora aperiam aspernatur reprehenderit facilis voluptatem explicabo quas labore voluptates consectetur esse ipsa, nam minus hic similique.
+          </Content>
           {/* More paragraphs and content */}
         </div>
+
+        <TagName
 
         {/* Tags */}
         <div className="tags mt-4 flex flex-wrap text-xs text-gray-600">

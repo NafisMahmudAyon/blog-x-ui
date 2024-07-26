@@ -15,3 +15,4 @@ export * from './FeedbackCount';
 export * from './RelatedPosts';
 export * from './AuthorBio';
 export * from './BlogAction';
+export * from './Content';

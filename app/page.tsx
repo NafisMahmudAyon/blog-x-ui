@@ -2,7 +2,7 @@
 
 
 
-import { Content, Excerpt, FeaturedImage, Title } from "./src";
+import { Category, Content, Excerpt, FeaturedImage, ShareButton, Tags, Title } from "./src";
 // import { Excerpt, FeaturedImage, Title } from "@/lib/cjs";
 
 export default function Home() {
@@ -93,7 +93,10 @@ export default function Home() {
           {/* More paragraphs and content */}
         </div>
 
-        <TagName
+        <Tags tags={["hello", "world"]}></Tags>
+        <Category categories={["hello", "world"]}></Category>
+
+        <ShareButton socialSite="Email" />
 
         {/* Tags */}
         <div className="tags mt-4 flex flex-wrap text-xs text-gray-600">

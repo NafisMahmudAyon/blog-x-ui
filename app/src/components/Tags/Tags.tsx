@@ -8,7 +8,6 @@ interface TagsProps extends React.AllHTMLAttributes<HTMLDivElement> {
 
 export const Tags: React.FC<TagsProps> = ({ tags="", tagItemStyle="", className="", children, tagName="div", ...rest }) => {
   const Tag: TagsProps["tagName"] = tagName;
-console.log(typeof tags)
   return (
     <Tag className={`${className} `} {...rest}>
       {children && children}

@@ -3,7 +3,7 @@ export * from './Title';
 export * from './Excerpt';
 export * from './FeaturedImage';
 export * from './Author';
-export * from './PublishDate';
+export * from './Date';
 export * from './Category';
 export * from './Tags';
 export * from './Likes';

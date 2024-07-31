@@ -2,7 +2,8 @@
 
 
 
-import { Category, Content, Excerpt, FeaturedImage, ShareButton, Tags, Title } from "./src";
+import { Category, Content, Excerpt, FeaturedImage, MetaInfo, ShareButton, Tags, Title } from "./src";
+import { Downvote, Email, Facebook, LinkedIn, Twitter, Upvote, WhatsApp } from "./src/components/Icon";
 // import { Excerpt, FeaturedImage, Title } from "@/lib/cjs";
 
 export default function Home() {
@@ -95,9 +96,18 @@ export default function Home() {
 
         <Tags tags={["hello", "world"]}></Tags>
         <Category categories={["hello", "world"]}></Category>
+        jjjj
 
-        <ShareButton socialSite="Email" />
+        <ShareButton socialSite="Email" iconEnabled={true} iconPosition="after" />
+        <ShareButton socialSite="Email" iconEnabled={true} iconPosition="after">
+          Share this post
+        </ShareButton>
+        <Facebook /><WhatsApp /><Twitter /> <LinkedIn /><Email /><Upvote /> <Downvote />
 
+        <MetaInfo type="readTime" count={5} text="min read" />
+        <MetaInfo type="viewsCount" count={15000} />
+        <MetaInfo type="commentCount" count={15500} />
+        <MetaInfo type="shareCount" count={50000} />
         {/* Tags */}
         <div className="tags mt-4 flex flex-wrap text-xs text-gray-600">
           <span className="tag bg-gray-200 px-2 py-1 rounded mr-2">Tag1</span>

@@ -1,11 +1,28 @@
 'use client'
+
+import React from 'react';
+import { Facebook, Twitter, LinkedIn, Pinterest, WhatsApp, Email, Telegram } from '../Icon';
+
 interface ShareButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   socialSite?: "Facebook" | "Twitter" | "LinkedIn" | "Pinterest" | "WhatsApp" | "Telegram" | "Email";
-  children?: React.ReactNode
+  children?: React.ReactNode;
+  iconEnabled?: boolean;
+  icon?: React.ReactNode;
+  iconStyle?: string;
+  iconPosition?: "before" | "after";
 }
 
-export const ShareButton: React.FC<ShareButtonProps> = ({ className = '', socialSite = 'Facebook', children, ...rest }) => {
+export const ShareButton: React.FC<ShareButtonProps> = ({
+  className = '',
+  socialSite = 'Facebook',
+  children,
+  icon,
+  iconEnabled = false,
+  iconPosition = "before",
+  iconStyle = "",
+  ...rest
+}) => {
   const getShareLink = (socialSite: ShareButtonProps["socialSite"]) => {
     if (typeof window === 'undefined') {
       return '#';
@@ -34,19 +51,41 @@ export const ShareButton: React.FC<ShareButtonProps> = ({ className = '', social
     }
   };
 
-  console.log(getShareLink(socialSite))
-
   const handleClick = () => {
     const link = getShareLink(socialSite);
     window.open(link, '_blank');
   };
 
+  const renderIcon = () => {
+    if (icon) return icon;
+
+    switch (socialSite) {
+      case 'Facebook':
+        return <Facebook className={iconStyle} />;
+      case 'Twitter':
+        return <Twitter className={iconStyle} />;
+      case 'LinkedIn':
+        return <LinkedIn className={iconStyle} />;
+      case 'Pinterest':
+        return <Pinterest className={iconStyle} />;
+      case 'WhatsApp':
+        return <WhatsApp className={iconStyle} />;
+      case 'Telegram':
+        return <Telegram className={iconStyle} />;
+      case 'Email':
+        return <Email className={iconStyle} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <button className={className} onClick={handleClick} {...rest}>
+      {iconEnabled && iconPosition === "before" && renderIcon()}
       {children && children}
-      {children && <>Share on {socialSite}</>}
+      {!children && <span>Share on {socialSite}</span>}
+      {iconEnabled && iconPosition === "after" && renderIcon()}
     </button>
   );
 };
 
-export default ShareButton;

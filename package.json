@@ -1,6 +1,6 @@
 {
   "name": "blog-x-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Blog UI Components",
   "files": [
     "./lib/"

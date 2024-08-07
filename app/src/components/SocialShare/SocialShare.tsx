@@ -1,9 +1,10 @@
-interface SocialShareProps extends React.AllHTMLAttributes<HTMLElement> {
-
+interface SocialShareProps extends React.AllHTMLAttributes<HTMLDivElement> {
+  className?: string;
+  children?: React.ReactNode
 }
 
-export const SocialShare: React.FC<SocialShareProps> = () => {
+export const SocialShare: React.FC<SocialShareProps> = ({className="", children, ...rest}) => {
   return (
-    <div>SocialShare</div>
+    <div className={`${className}`} {...rest}>{children}</div>
   )
 }

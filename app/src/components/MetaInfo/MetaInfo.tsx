@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatNumber } from '../utils/FormatNumber';
 
 interface MetaInfoProps extends React.HTMLAttributes<HTMLDivElement> {
   count?: number;
@@ -14,16 +15,6 @@ interface MetaInfoProps extends React.HTMLAttributes<HTMLDivElement> {
   textStyle?: string;
   text?: string;
 }
-
-const formatNumber = (num: number): string => {
-  if (num >= 1000000) {
-    return (num % 1000000 === 0) ? (num / 1000000).toFixed(0) + 'M' : (num / 1000000).toFixed(1) + 'M';
-  }
-  if (num >= 1000) {
-    return (num % 1000 === 0) ? (num / 1000).toFixed(0) + 'k' : (num / 1000).toFixed(1) + 'k';
-  }
-  return num.toString();
-};
 
 export const MetaInfo: React.FC<MetaInfoProps> = ({
   count,

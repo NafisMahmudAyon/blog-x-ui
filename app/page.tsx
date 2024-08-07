@@ -1,12 +1,12 @@
 // import Image from "next/image";
 
 
-
-import { Category, Content, Excerpt, FeaturedImage, MetaInfo, ShareButton, Tags, Title } from "./src";
-import { Downvote, Email, Facebook, LinkedIn, Twitter, Upvote, WhatsApp } from "./src/components/Icon";
-// import { Excerpt, FeaturedImage, Title } from "@/lib/cjs";
+import { Category, Content, Downvote, Date, Excerpt, FeaturedImage, FeedbackCount, Likes, MetaInfo, ShareButton, Tags, Title, Upvote, Upvotes, BlogAction, Author } from "./src";
+import { Avatar, Comment, DownvoteIcon, Email, Facebook, Like, LinkedIn, Twitter, UpvoteIcon, WhatsApp } from "./src/components/Icon";
+// import { Date } from "@/lib/cjs";
 
 export default function Home() {
+  // const d = new Date()
   const aaa = "Lorem dsfsdfdsff sdf sf sdfdsfsdff xxxx x x xxxx x xx x   x x x xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx"
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -44,7 +44,7 @@ export default function Home() {
         </div>
       </article>
 
-      <article className="flex flex-col dark:bg-gray-50 p-6 border border-gray-200 rounded-lg">
+      <article className="relative flex flex-col dark:bg-gray-50 p-6 border border-gray-200 rounded-lg">
         {/* Feature Image */}
         <div className="feature-image">
           <FeaturedImage
@@ -88,7 +88,7 @@ export default function Home() {
         {/* Content */}
         <div className="content mt-4 text-gray-900">
           <Content>Here's the main body of the blog post. This is where the full content goes.
-            
+
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo at repellat, eligendi excepturi tempora aperiam aspernatur reprehenderit facilis voluptatem explicabo quas labore voluptates consectetur esse ipsa, nam minus hic similique.
           </Content>
           {/* More paragraphs and content */}
@@ -102,13 +102,30 @@ export default function Home() {
         <ShareButton socialSite="Email" iconEnabled={true} iconPosition="after">
           Share this post
         </ShareButton>
-        <Facebook /><WhatsApp /><Twitter /> <LinkedIn /><Email /><Upvote /> <Downvote />
+        <div className="bg-red-500">
+        <Facebook /><WhatsApp /><Twitter /> <LinkedIn /><Email /><UpvoteIcon /> <DownvoteIcon /> <Like className="text-gray-300" /> <Comment /><Avatar /></div>
 
-        <MetaInfo type="readTime" count={5} text="min read" />
+        <MetaInfo type="readTime" countStyle="text-lg" textStyle="text-xs" count={5} text="min read" />
         <MetaInfo type="viewsCount" count={15000} />
         <MetaInfo type="commentCount" count={15500} />
         <MetaInfo type="shareCount" count={50000} />
+        <div className="bg-red-500">
+          <Likes />
+        </div>
+        <Upvotes count={0}>
+          <Upvote />
+          <Downvote />
+        </Upvotes>
+        <FeedbackCount count={1600} text="Hello" countPosition="beforeIcon" />
+        <Date date="2024-07-26T12:34:56" formatString="MMMM D, YYYY" className="text-blue-500" /> {/* July 26, 2024 */}
+        <Date date="2024-07-26T12:34:56" formatString="MM-DD-YY" className="text-red-500" /> {/* 07-26-24 */}
+        <Date date="26/01/2025" formatString="do MMMM YYYY" className="text-green-500" /> {/* 26th January 2025 */}
+        <Date date="2024-07-28 " formatString="dddd, MMMM D, YYYY" className="text-purple-500" /> {/* Friday, July 26, 2024 */}
+        {/* <Date date={d} formatString="YYYY-MM-DD HH:mm:ss" className="text-red-500" /> */}
         {/* Tags */}
+        <BlogAction />
+        <Author type="avatar" profileLink="#" />
+
         <div className="tags mt-4 flex flex-wrap text-xs text-gray-600">
           <span className="tag bg-gray-200 px-2 py-1 rounded mr-2">Tag1</span>
           <span className="tag bg-gray-200 px-2 py-1 rounded mr-2">Tag2</span>

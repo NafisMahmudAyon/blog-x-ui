@@ -1,6 +1,6 @@
 {
   "name": "blog-x-ui",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React Blog UI Components",
   "files": [
     "./lib/"
@@ -51,8 +51,7 @@
   "bugs": {
     "url": "https://github.com/NafisMahmudAyon/blog-x-ui/issues"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",

@@ -13,4 +13,8 @@ export declare const DownvoteIcon: React.FC<IconProps>;
 export declare const Like: React.FC<IconProps>;
 export declare const Comment: React.FC<IconProps>;
 export declare const Avatar: React.FC<IconProps>;
+export declare const DateIcon: React.FC<IconProps>;
+export declare const Copy: React.FC<IconProps>;
+export declare const Copied: React.FC<IconProps>;
+export declare const ReadMoreIcon: React.FC<IconProps>;
 export {};

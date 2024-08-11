@@ -1,8 +1,10 @@
 import React from 'react';
 interface CategoryProps extends React.AllHTMLAttributes<HTMLDivElement> {
     categories?: string | string[];
-    categoryName?: "div" | "section";
+    tagName?: "div" | "section";
     className?: string;
+    isLink?: boolean;
+    link?: string;
     categoryItemStyle?: string;
     children?: React.ReactNode;
 }

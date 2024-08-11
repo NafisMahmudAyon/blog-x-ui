@@ -3,10 +3,10 @@ import { Avatar } from "../Icon";
 
 interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
   type: "avatar" | "name" | "description";
-  text?: string;
+  name?: string;
   isLink?: boolean;
   profileLink?: string;
-  avatarLink?: string;
+  profileImage?: string;
   avatarStyle?: string;
   tagName?: "article" | "span" | "div" | "section" | "a";
   className?: string;
@@ -15,10 +15,10 @@ interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Author: React.FC<AuthorProps> = ({
   type = "avatar",
-  text,
+  name,
   isLink,
   profileLink,
-  avatarLink,
+  profileImage,
   avatarStyle = "",
   tagName = "div",
   className = "",
@@ -31,21 +31,21 @@ export const Author: React.FC<AuthorProps> = ({
   const combinedProps = {
     className,
     ...rest,
-    ...(isLink && profileLink ? { href: profileLink } : {})
+    ...((isLink && profileLink) ? { href: profileLink } : {})
   };
 
   return (
     <Tag {...combinedProps as React.HTMLAttributes<HTMLElement>}>
       {type === "avatar" && (
         <>
-          {avatarLink ? (
-            <img className={avatarStyle} src={avatarLink} alt={text || "Avatar"} />
+          {profileImage ? (
+            <img className={avatarStyle} src={profileImage} alt={name || "Avatar"} />
           ) : (
             <Avatar className={avatarStyle} />
           )}
         </>
       )}
-      {(type === "name" || type === "description") && text}
+      {(type === "name" || type === "description") && name}
       {children}
     </Tag>
   );

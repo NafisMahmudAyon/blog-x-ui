@@ -1,15 +1,57 @@
-'use  client'
-import React, { useState } from 'react'
+'use client';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import PostLayout from './PostLayout';
+import SinglePost from './SinglePost';
+
+const tabs = [
+  { id: 'postLayout', label: 'Post Layout' },
+  { id: 'singlePost', label: 'Single Post Page' },
+];
 
 const Tabs = () => {
-  const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: "-100%" },
-  }
-  const [isOpen, setIsOpen] = useState(false)
-  return (
-    <div>Tabs</div>
-  )
-}
+  const [selected, setSelected] = useState(tabs[0].id);
 
-export default Tabs
+  return (
+    <div>
+      <div className="flex space-x-1 justify-center">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setSelected(tab.id)}
+            className={`relative rounded-full px-3 py-1.5 text-sm font-medium text-white transition ${selected === tab.id ? '' : 'hover:text-white/60'
+              }`}
+            style={{
+              WebkitTapHighlightColor: 'transparent',
+            }}
+          >
+            {selected === tab.id && (
+              <motion.span
+                layoutId="bubble"
+                className="absolute inset-0 z-10 bg-white mix-blend-difference"
+                style={{ borderRadius: 9999 }}
+                transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+              />
+            )}
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-4">
+        <motion.div
+          key={selected} // Adding key to ensure proper re-rendering
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 10 }}
+          transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
+        >
+          {selected === 'postLayout' && <PostLayout />}
+          {selected === 'singlePost' && <SinglePost />}
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default Tabs;

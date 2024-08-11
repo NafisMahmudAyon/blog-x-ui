@@ -2,6 +2,7 @@
 
 
 import { Category, Content, Downvote, Date, Excerpt, FeaturedImage, FeedbackCount, Likes, MetaInfo, ShareButton, Tags, Title, Upvote, Upvotes, BlogAction, Author, RelatedPosts, RelatedPost } from "./src";
+// import * from "./src";
 import { Avatar, Comment, DownvoteIcon, Email, Facebook, Like, LinkedIn, Twitter, UpvoteIcon, WhatsApp } from "./src/components/Icon";
 // import { Date } from "@/lib/cjs";
 

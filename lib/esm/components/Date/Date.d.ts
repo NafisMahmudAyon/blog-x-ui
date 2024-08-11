@@ -37,7 +37,11 @@ interface DateProps extends React.HTMLAttributes<HTMLDivElement> {
    * formatString = "DD/MM/YYYY" // "26/07/2024"
    * formatString = "do MMMM YYYY" // "26th January 2025"
    */
-    formatString: string;
+    formatString?: string;
+    iconEnabled?: boolean;
+    icon?: string | React.ReactNode;
+    iconPosition?: "before" | "after";
+    iconStyle?: string;
     className?: string;
 }
 export declare const Date: React.FC<DateProps>;

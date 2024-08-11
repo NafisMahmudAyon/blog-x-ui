@@ -1,10 +1,10 @@
 import React from 'react';
 interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
     type: "avatar" | "name" | "description";
-    text?: string;
+    name?: string;
     isLink?: boolean;
     profileLink?: string;
-    avatarLink?: string;
+    profileImage?: string;
     avatarStyle?: string;
     tagName?: "article" | "span" | "div" | "section" | "a";
     className?: string;

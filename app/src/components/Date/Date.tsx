@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { formatDate } from '../utils/formatDate';
+import { DateIcon } from '../Icon';
 
 interface DateProps extends React.HTMLAttributes<HTMLDivElement> {
   date: string | Date;
@@ -40,16 +41,24 @@ interface DateProps extends React.HTMLAttributes<HTMLDivElement> {
  * formatString = "DD/MM/YYYY" // "26/07/2024"
  * formatString = "do MMMM YYYY" // "26th January 2025"
  */
-  formatString: string;
+  formatString?: string;
+  iconEnabled?: boolean;
+  icon?: string | React.ReactNode;
+  iconPosition?: "before" | "after";
+  iconStyle?: string;
   className?: string;
 }
 
-export const Date: React.FC<DateProps> = ({ date, formatString, className = '', ...rest }) => {
+export const Date: React.FC<DateProps> = ({ date, formatString = "MMMM D, YYYY", className = '', iconEnabled, icon, iconPosition="before", iconStyle="", ...rest }) => {
   const formattedDate = formatDate(date, formatString);
 
   return (
     <div className={className} {...rest}>
+      {(iconEnabled && iconPosition === "before") && <>
+      {icon ? icon : <DateIcon />}</>}
       {formattedDate}
+      {(iconEnabled && iconPosition === "after") && <>
+      {icon ? icon : <DateIcon />}</>}
     </div>
   );
 };

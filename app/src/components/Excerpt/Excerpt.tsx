@@ -3,7 +3,7 @@ interface ExcerptProps extends React.AllHTMLAttributes<HTMLElement> {
   className?: string;
   children: React.ReactNode;
   limit?: number;
-  limitBy: "word" | "character";
+  limitBy?: "word" | "character";
 }
 
 export const Excerpt: React.FC<ExcerptProps> = ({ tagName = "p", className = "", limitBy = "word", limit, children = "", ...rest }) => {

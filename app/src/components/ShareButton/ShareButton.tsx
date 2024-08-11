@@ -6,6 +6,7 @@ import { Facebook, Twitter, LinkedIn, Pinterest, WhatsApp, Email, Telegram } fro
 interface ShareButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   socialSite?: "Facebook" | "Twitter" | "LinkedIn" | "Pinterest" | "WhatsApp" | "Telegram" | "Email";
+  target?: "_blank" | "_self" | "_parent" | "_top";
   children?: React.ReactNode;
   iconEnabled?: boolean;
   icon?: React.ReactNode;
@@ -16,6 +17,7 @@ interface ShareButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 export const ShareButton: React.FC<ShareButtonProps> = ({
   className = '',
   socialSite = 'Facebook',
+  target="_blank",
   children,
   icon,
   iconEnabled = false,
@@ -53,7 +55,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
 
   const handleClick = () => {
     const link = getShareLink(socialSite);
-    window.open(link, '_blank');
+    window.open(link, target);
   };
 
   const renderIcon = () => {

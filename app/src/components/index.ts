@@ -16,3 +16,4 @@ export * from './RelatedPosts';
 export * from './AuthorBio';
 export * from './BlogAction';
 export * from './Content';
+export * from './ReadMore';

@@ -1,7 +1,7 @@
 interface BlogActionProps extends React.AllHTMLAttributes<HTMLAnchorElement> {
     className?: string;
     children?: React.ReactNode;
-    href?: string;
+    link?: string;
 }
 export declare const BlogAction: React.FC<BlogActionProps>;
 export {};

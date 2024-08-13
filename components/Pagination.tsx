@@ -35,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
               className={`px-4 py-2 text-green-600 transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-green-100 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}`}
               disabled={currentPage === 1}
             >
-              Prev
+              {"⫷"}
             </button>
           </li>
 
@@ -63,7 +63,8 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
               className={`px-4 py-2 text-green-600 transition-colors duration-150 rounded-r-lg focus:shadow-outline hover:bg-green-100 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
               disabled={currentPage === totalPages}
             >
-              Next
+              {"⫸"}
+              {/* {">⊳⊲⨠⪢⪡⪻⪼⫷⫸⇛⇚⇨⇦»«›‹"} */}
             </button>
           </li>
         </ul>

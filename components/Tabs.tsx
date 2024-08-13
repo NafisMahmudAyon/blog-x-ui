@@ -38,7 +38,6 @@ const Tabs = () => {
           </button>
         ))}
       </div>
-
       <div className="mt-4">
         <motion.div
           key={selected} // Adding key to ensure proper re-rendering

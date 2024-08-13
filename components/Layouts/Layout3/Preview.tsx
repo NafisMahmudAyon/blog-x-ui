@@ -14,7 +14,7 @@ export const Preview = () => {
               <Blog className='grid gap-1 md:gap-2 py-3 md:py-4 px-4'>
                 <Blog className='flex gap-4 md:gap-6 items-center'>
                   <AuthorBio className='flex gap-2 items-center relative z-20'>
-                    <Author type='avatar' profileImage={post.author.avatar} name={post.author.name} profileLink={post.author.profileLink} isLink className='w-10' avatarStyle='max-w-full h-auto aspect-square rounded-full ' />
+                    <Author type='avatar' className='flex' iconEnabled name={post.author.name} profileLink={post.author.profileLink} isLink avatarStyle='max-w-full h-auto aspect-square rounded-full ' />
                     <Author type='name' name={post.author.name} className='font-medium' isLink profileLink={post.author.profileLink} />
                   </AuthorBio>
                   <Date date={post.date} formatString='MMM DD, YY' iconEnabled className='flex items-center gap-2' />

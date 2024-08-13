@@ -6,6 +6,8 @@ interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
     profileLink?: string;
     profileImage?: string;
     avatarStyle?: string;
+    iconEnabled?: boolean;
+    icon?: React.ReactDOM;
     tagName?: "article" | "span" | "div" | "section" | "a";
     className?: string;
     children?: React.ReactNode;

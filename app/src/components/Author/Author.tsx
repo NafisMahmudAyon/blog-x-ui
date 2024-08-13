@@ -8,6 +8,8 @@ interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
   profileLink?: string;
   profileImage?: string;
   avatarStyle?: string;
+  iconEnabled?: boolean;
+  icon?: React.ReactDOM;
   tagName?: "article" | "span" | "div" | "section" | "a";
   className?: string;
   children?: React.ReactNode;
@@ -20,6 +22,8 @@ export const Author: React.FC<AuthorProps> = ({
   profileLink,
   profileImage,
   avatarStyle = "",
+  iconEnabled = false,
+  icon,
   tagName = "div",
   className = "",
   children,
@@ -38,15 +42,20 @@ export const Author: React.FC<AuthorProps> = ({
     <Tag {...combinedProps as React.HTMLAttributes<HTMLElement>}>
       {type === "avatar" && (
         <>
-          {profileImage ? (
+          {profileImage && (
             <img className={avatarStyle} src={profileImage} alt={name || "Avatar"} />
-          ) : (
-            <Avatar className={avatarStyle} />
           )}
+          {iconEnabled && !profileImage && (
+            <>
+              {icon ? icon :
+                <Avatar className={avatarStyle} />
+              }
+            </>
+          )}
+
         </>
       )}
       {(type === "name" || type === "description") && name}
-      {children}
     </Tag>
   );
 };

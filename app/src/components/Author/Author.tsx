@@ -3,13 +3,18 @@ import { Avatar } from "../Icon";
 
 interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
   type: "avatar" | "name" | "description";
-  name?: string;
+  content?: string;
+  contentStyle?: string;
   isLink?: boolean;
   profileLink?: string;
   profileImage?: string;
   avatarStyle?: string;
   iconEnabled?: boolean;
   icon?: React.ReactDOM;
+  prefix?: string;
+  prefixStyle?: string;
+  postfix?: string;
+  postfixStyle?: string;
   tagName?: "article" | "span" | "div" | "section" | "a";
   className?: string;
   children?: React.ReactNode;
@@ -17,13 +22,18 @@ interface AuthorProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const Author: React.FC<AuthorProps> = ({
   type = "avatar",
-  name,
+  content,
+  contentStyle = "",
   isLink,
   profileLink,
   profileImage,
   avatarStyle = "",
   iconEnabled = false,
   icon,
+  prefix,
+  prefixStyle = "",
+  postfix,
+  postfixStyle = "",
   tagName = "div",
   className = "",
   children,
@@ -43,7 +53,7 @@ export const Author: React.FC<AuthorProps> = ({
       {type === "avatar" && (
         <>
           {profileImage && (
-            <img className={avatarStyle} src={profileImage} alt={name || "Avatar"} />
+            <img className={avatarStyle} src={profileImage} alt={content || "Avatar"} />
           )}
           {iconEnabled && !profileImage && (
             <>
@@ -55,7 +65,12 @@ export const Author: React.FC<AuthorProps> = ({
 
         </>
       )}
-      {(type === "name" || type === "description") && name}
+      {(type === "name" || type === "description") && (
+        <>
+          {prefix && <span className={`${prefixStyle}`}>{prefix}</span>}
+          <span className={`${contentStyle}`}>{content}</span>
+          {postfix && <span className={`${postfixStyle}`}>{postfix}</span>}
+        </>)}
     </Tag>
   );
 };

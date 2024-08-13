@@ -3,10 +3,13 @@ import { Author } from "../Author/Author";
 
 interface AuthorBioProps extends React.AllHTMLAttributes<HTMLDivElement> {
   tagName?: "article" | "span" | "div" | "section";
-  name?: string;
+  content?: string;
   isLink?: boolean;
   profileLink?: string;
   profileImage?: string;
+  iconEnabled?: boolean;
+  prefix?: string;
+  postfix?: string;
   className?: string;
   children?: React.ReactNode;
 }
@@ -14,10 +17,13 @@ interface AuthorBioProps extends React.AllHTMLAttributes<HTMLDivElement> {
 
 export const AuthorBio:React.FC<AuthorBioProps> = ({ 
   tagName = "div",
-  name,
+  content,
   isLink,
   profileLink,
   profileImage,
+  iconEnabled,
+  prefix,
+  postfix,
   children, 
   className = "",
   ...rest
@@ -25,17 +31,23 @@ export const AuthorBio:React.FC<AuthorBioProps> = ({
   const Tag: AuthorBioProps["tagName"] = tagName;
 
   type AuthorProps = {
-    name?: string;
+    content?: string;
     isLink?: boolean;
     profileLink?: string;
     profileImage?: string;
+    iconEnabled?: boolean;
+    prefix?: string;
+    postfix?: string;
   }
   
   const authorProps: AuthorProps = {
-    name: name,
+    content: content,
     isLink: isLink,
     profileLink: profileLink,
     profileImage: profileImage,
+    iconEnabled: iconEnabled,
+    prefix: prefix,
+    postfix: postfix,
   }
 
   return (

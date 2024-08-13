@@ -32,7 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
           <li>
             <button
               onClick={() => onPageChange(currentPage - 1)}
-              className={`px-4 py-2 text-green-600 transition-colors duration-150 rounded-l-lg focus:shadow-outline hover:bg-green-100 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}`}
+              className={`px-2 md:px-3 lg:px-4 py-2 text-green-600 transition-colors duration-150 rounded-l-lg hover:bg-green-100 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}`}
               disabled={currentPage === 1}
             >
               {"⫷"}
@@ -44,15 +44,15 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
               <li key={index}>
                 <button
                   onClick={() => onPageChange(page)}
-                  className={`px-4 py-2 transition-colors duration-150 focus:shadow-outline ${currentPage === page ? 'bg-green-600 text-white' : ' text-green-600 hover:bg-green-100'} ${index === visiblePages.length - 1 && ''}`}
+                  className={`px-2 md:px-3 lg:px-4 py-2 transition-colors duration-150 ${currentPage === page ? 'bg-green-600 text-white' : ' text-green-600 hover:bg-green-100'} ${index === visiblePages.length - 1 && ''}`}
                 >
                   {page}
                 </button>
               </li>
             ) : (
               <li key={index}>
-                {/* <span className="px-4 py-2 text-green-600">...</span> */}
-                  <span className="inline-block rotate-180 px-4 py-2 text-green-600 transition-colors duration-150  hover:bg-green-100">°°°</span>
+                {/* <span className="px-2 md:px-3 lg:px-4 py-2 text-green-600">...</span> */}
+                  <span className="inline-block h-full rotate-180 text-xs lg:text-base px-2 md:px-3 lg:px-4 py-2 text-green-600 transition-colors duration-150  hover:bg-green-100">°°°</span>
               </li>
             )
           )}
@@ -60,7 +60,7 @@ const Pagination: React.FC<PaginationProps> = ({ totalItems, itemsPerPage, curre
           <li>
             <button
               onClick={() => onPageChange(currentPage + 1)}
-              className={`px-4 py-2 text-green-600 transition-colors duration-150 rounded-r-lg focus:shadow-outline hover:bg-green-100 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
+              className={`px-2 md:px-3 lg:px-4 py-2 text-green-600 transition-colors duration-150 rounded-r-lg hover:bg-green-100 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
               disabled={currentPage === totalPages}
             >
               {"⫸"}

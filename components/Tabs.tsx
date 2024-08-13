@@ -6,6 +6,7 @@ import SinglePost from './SinglePost';
 
 const tabs = [
   { id: 'postLayout', label: 'Post Layout' },
+  { id: 'gridLayout', label: 'Grid Layout' },
   { id: 'singlePost', label: 'Single Post Page' },
 ];
 
@@ -14,12 +15,12 @@ const Tabs = () => {
 
   return (
     <div>
-      <div className="flex space-x-1 justify-center">
+      <div className="flex gap-2 justify-start md:justify-center overflow-x-scroll">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setSelected(tab.id)}
-            className={`relative rounded-full px-3 py-1.5 text-sm font-medium text-white transition ${selected === tab.id ? '' : 'hover:text-white/60'
+            className={`relative rounded-full px-3 py-1.5 text-sm font-medium text-nowrap text-white transition ${selected === tab.id ? '' : 'hover:text-white/60'
               }`}
             style={{
               WebkitTapHighlightColor: 'transparent',
@@ -47,6 +48,7 @@ const Tabs = () => {
           transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
         >
           {selected === 'postLayout' && <PostLayout />}
+          {selected === 'gridLayout' && <PostLayout />}
           {selected === 'singlePost' && <SinglePost />}
         </motion.div>
       </div>

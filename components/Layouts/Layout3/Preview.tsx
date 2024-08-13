@@ -13,9 +13,9 @@ export const Preview = () => {
               <FeaturedImage src={post.featuredImage} alt='image' className='max-w-auto h-auto object-cover ' />
               <Blog className='grid gap-1 md:gap-2 py-3 md:py-4 px-4'>
                 <Blog className='flex gap-4 md:gap-6 items-center'>
-                  <AuthorBio className='flex gap-2 items-center relative z-20'>
-                    <Author type='avatar' className='flex' iconEnabled name={post.author.name} profileLink={post.author.profileLink} isLink avatarStyle='max-w-full h-auto aspect-square rounded-full ' />
-                    <Author type='name' name={post.author.name} className='font-medium' isLink profileLink={post.author.profileLink} />
+                  <AuthorBio className='flex gap-2 items-center relative z-20' iconEnabled content={post.author.name} profileLink={post.author.profileLink} isLink >
+                    <Author type='avatar' className='flex'  avatarStyle='max-w-full h-auto aspect-square rounded-full ' />
+                    <Author type='name' className='font-medium' />
                   </AuthorBio>
                   <Date date={post.date} formatString='MMM DD, YY' iconEnabled className='flex items-center gap-2' />
                 </Blog>

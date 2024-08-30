@@ -1,7 +1,7 @@
 'use client'
-import { Author, AuthorBio, Blog, BlogAction, Category, Date, FeaturedImage, Title } from '@/app/src';
+// import { Author, AuthorBio, Blog, BlogAction, Category, Date, FeaturedImage, Title } from '@/app/src';
 import React, { useState } from 'react';
-import posts from './posts';
+// import posts from './posts';
 
 export const ViewportChanger = () => {
   const [viewport, setViewport] = useState('desktop');

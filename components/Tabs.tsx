@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import PostLayout from './PostLayout';
 import SinglePost from './SinglePost';
+import GridLayouts from './GridLayouts';
 
 const tabs = [
   { id: 'postLayout', label: 'Post Layout' },
@@ -47,7 +48,7 @@ const Tabs = () => {
           transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
         >
           {selected === 'postLayout' && <PostLayout />}
-          {selected === 'gridLayout' && <PostLayout />}
+          {selected === 'gridLayout' && <GridLayouts />}
           {selected === 'singlePost' && <SinglePost />}
         </motion.div>
       </div>

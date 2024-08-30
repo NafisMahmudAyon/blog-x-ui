@@ -9,20 +9,14 @@ const tabs = [
   { id: 'code', label: 'Code' },
 ];
 
-export const Layout5 = () => {
+export const GLayout2 = () => {
   const [selected, setSelected] = useState(tabs[0].id);
-  // const [view, setView] = useState('M')
 
   return (
     <div>
       <h3 
       className='w-[max-content] mx-auto text-xl font-medium text-center text-white my-4 border-b-2 border-transparent hover:border-b-2 hover:border-white transition-all duration-500 ease-in-out '
-      >Layout 5</h3>
-      {/* <span>
-        <span onClick={() => setView('M')}>M</span>
-        <span onClick={() => setView('T')}>T</span>
-        <span onClick={() => setView('D')}>D</span>
-      </span> */}
+      >Grid Layout 2</h3>
       <div className="flex space-x-1">
         {tabs.map((tab) => (
           <button
